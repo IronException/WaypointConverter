@@ -1,0 +1,24 @@
+n: x y z (c) w n a
+example: name: -61 68 28 (#05FC40)  0
+to example: as you can see I didnt type a value for w. So you can leave values out if you want the standard value there but make sure to leave the seperators in there. Otherwise a mess with be outputed. You can also end before you have pasted every value but still keep the possible mess in mind.
+name: n
+x coordinate: x
+y coordinate: y
+z coordinate: z
+owerworld coordinates: w
+to w: Type 1 for overworld coordinates. Otherwise say 0 for end or nether. So the programm knows wether it has to convert the coordinates for journey map
+red: r
+green: g
+blue: b
+color value: c
+to c: The color value is saved as r g b seperatly in journey map but you can also input hex values with c in my program.
+enable: a
+overworld dimension: o
+nether dimension: n
+end dimension: e
+origin: h
+icon: i
+persistent: p
+to o, n, p: either type 1 if the waypoint shall be for that dimension or 0 if it sholdnt.
+to 1 and 0: You can also use True or true for 1 and False and false for 0. Otherwise it will every be false
+note: if you dont know what to do with variables better dont touch them. I left the variables out in the standart format that you probably dont need and that I dont know a way of changing in game.

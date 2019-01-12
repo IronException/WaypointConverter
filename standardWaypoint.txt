@@ -1,0 +1,16 @@
+n: unknown
+x: 0
+y: 64
+z: 0
+w: true
+r: random
+g: random
+b: random
+c: random
+a: true
+i: waypoint-normal.png
+h: Normal
+o: true
+n: true
+e: false
+p: true
