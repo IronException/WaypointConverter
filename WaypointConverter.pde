@@ -1,18 +1,40 @@
 
 
 public void setup(){
+  size(280, 160);
+  
+  savedWps = 0;
+  // TODO error screen
+  try{
+    initStandardWaypoint();
+    String[] dataFormat = initDataFormat();
+    
+    
+    // TODO init standard + dataFormat
+    convertDataFile(dataFormat, loadStrings("waypoints.txt"));
+    
+    if(savedWps == 1){
+      println("1 Waypoint is converted");
+    } else {
+      println(savedWps + " Waypoints are converted");
+    }
+    println("You can now add them to:");
+    println("\t.minecraft/journeymap/data/mp/Minecraft~Server/waypoints");
+    
+    exit();
+  } catch (Exception e){
+    background(230, 0, 0);
+    text("there is an ERROR", 0, 0, width, height / 2.0);
+    println("there is an ERROR");
+    text(e + "", 0, height / 2.0, width, height / 2.0);
+    println(e);
+    
+  }
   
   
-  initStandardWaypoint();
-  String[] dataFormat = initDataFormat();
-  
-  
-  // TODO init standard + dataFormat
-  convertDataFile(dataFormat, loadStrings("waypoints.txt"));
-  
-  
-  exit();
 }
+
+int savedWps;
 
 
 
@@ -122,4 +144,5 @@ public void saveWaypoint(Waypoint w){
   info[17] = "}";
   
   saveStrings("waypoints/" + fileName + ".json", info);
+  savedWps ++;
 }

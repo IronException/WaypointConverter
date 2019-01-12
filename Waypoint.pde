@@ -47,7 +47,10 @@ public class Waypoint{
     } else if(variable.equals("b")){
       this.rgb = color(red(this.rgb), green(this.rgb), Integer.parseInt(value));
     } else if(variable.equals("c")){
-      this.rgb = unhex(value.trim());
+      if(value.charAt(0) == '#'){
+        value = value.substring(1);
+      }
+      this.rgb = unhex(value);
     } else if(variable.equals("a")){
       this.enable = toBoolean(value);
     } else if(variable.equals("h")){
