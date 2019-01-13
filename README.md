@@ -29,6 +29,6 @@ to use it
   If you have any questtions you can ask me.
   
   for questions or suggestions:
-  my discord is Friedolin2000#4092
-  the github is https://github.com/IronException/WaypointConverter
+ - my discord is Friedolin2000#4092
+ - the github is https://github.com/IronException/WaypointConverter
   
