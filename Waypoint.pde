@@ -106,7 +106,19 @@ public class Waypoint{
   
 }
 
-
+public String getLine(String[] dataFormat, Waypoint w){
+  String rV = "";
+  
+  for(int i = 0; i < dataFormat.length; i ++){
+    if(i % 2 == 0){
+      rV += w.get(dataFormat[i]);
+    } else {
+      rV += dataFormat[i];
+    }
+    
+  }
+  
+}
 
 public Waypoint initStandardWaypoint(){
   String[] info = loadStrings("standardWaypoint.txt");
