@@ -31,12 +31,15 @@ public class Waypoint{
     }
     
     if(variable.equals("n")){
+      println("set n to " + value);
       this.name = value;
     } else if(variable.equals("x")){
+      println("set x to " + value);
       this.x = Integer.parseInt(value);
     } else if(variable.equals("y")){
       this.y = Integer.parseInt(value);
     } else if(variable.equals("z")){
+      println("set z to " + value);
       this.z = Integer.parseInt(value);
     } else if(variable.equals("i")){
       this.icon = value;
@@ -57,7 +60,7 @@ public class Waypoint{
       this.origin = value;
     } else if(variable.equals("o")){
       this.dimO = toBoolean(value);
-    } else if(variable.equals("n")){
+    } else if(variable.equals("E")){
       this.dimN = toBoolean(value);
     } else if(variable.equals("e")){
       this.dimE = toBoolean(value);
@@ -87,6 +90,11 @@ public class Waypoint{
   
   public String getDimensions(){
     String rV = "";
+    /*
+      nether is -1
+      end is 1
+      ovw is 0
+    */
     if(dimN){
       rV += "-1";
     }
@@ -118,6 +126,7 @@ public Waypoint initStandardWaypoint(){
   for(String data : info){
     sp = data.split(": ");
     standard.set(sp[0], sp[1]);
+    
   }
   return standard;
 }

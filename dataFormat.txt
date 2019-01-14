@@ -14,7 +14,7 @@ color value: c
 to c: The color value is saved as r g b seperatly in journey map but you can also input hex values with c in my program.
 enable: a
 overworld dimension: o
-nether dimension: n
+nether dimension: E
 end dimension: e
 origin: h
 type: t

@@ -1,7 +1,7 @@
 n: unknown
 x: 0
 y: 64
-z: 0
+z: 5000
 w: true
 r: 3
 g: 146
@@ -12,6 +12,6 @@ i: waypoint-normal.png
 h: journeymap
 t: Normal
 o: true
-n: true
-e: true
+E: true
+e: false
 p: true
