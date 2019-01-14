@@ -2,6 +2,22 @@
 
 
 
+
+
+
+public boolean isEqual(String data, int dataIndex, String toCompare){
+  
+  for(int i = 0; i < toCompare.length(); i ++){
+    if(data.charAt(dataIndex) != toCompare.charAt(i)){
+      return false;
+    }
+    dataIndex ++;
+  }
+  
+  return true;
+}
+
+
 public boolean isAVariable(char c){
   if(c == 'n'){
     return true;

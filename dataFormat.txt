@@ -1,4 +1,4 @@
-n: x y z (c) w n a
+n: x z 
 example: name: -61 68 28 (#05FC40)  0
 to example: as you can see I didnt type a value for w. So you can leave values out if you want the standard value there but make sure to leave the seperators in there. Otherwise a mess with be outputed. You can also end before you have pasted every value but still keep the possible mess in mind.
 name: n
@@ -17,6 +17,7 @@ overworld dimension: o
 nether dimension: n
 end dimension: e
 origin: h
+type: t
 icon: i
 persistent: p
 to o, n, p: either type 1 if the waypoint shall be for that dimension or 0 if it sholdnt.

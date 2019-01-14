@@ -27,13 +27,13 @@ public class Waypoint{
   
   public void set(String variable, String value){
     if(value.equals("random")){
-      value = ((int) random(256)) + "";
+      value = (int) random(256) + "";
     }
     
     if(variable.equals("n")){
       this.name = value;
     } else if(variable.equals("x")){
-      this.x = Integer.parseInt(value);;
+      this.x = Integer.parseInt(value);
     } else if(variable.equals("y")){
       this.y = Integer.parseInt(value);
     } else if(variable.equals("z")){
@@ -65,101 +65,10 @@ public class Waypoint{
       this.persistent = toBoolean(value);
     } else if(variable.equals("w")){
       this.convertCoords = !toBoolean(value);
+    } else if(variable.equals("t")){
+      this.type = value;
     }
   }
-  
-  
-  public String get(String variable){
-    if(variable.equals("n")){
-      return this.name;
-    } else if(variable.equals("x")){
-      return this.x + "";
-    } else if(variable.equals("y")){
-      return this.y + "";
-    } else if(variable.equals("z")){
-      return this.z + "";
-    } else if(variable.equals("i")){
-      return this.icon;
-    } else if(variable.equals("r")){
-      return red(this.rgb) + "";
-    } else if(variable.equals("g")){
-      return green(this.rgb) + "";
-    } else if(variable.equals("b")){
-      return blue(this.rgb) + "";
-    } else if(variable.equals("c")){
-      return Integer.toHexString(this.rgb);
-    } else if(variable.equals("a")){
-      return this.enable;
-    } else if(variable.equals("h")){
-      return this.origin;
-    } else if(variable.equals("o")){
-      return this.dimO;
-    } else if(variable.equals("n")){
-      return this.dimN;
-    } else if(variable.equals("e")){
-      return this.dimE;
-    } else if(variable.equals("p")){
-      return this.persistent;
-    } else if(variable.equals("w")){
-      return this.convertCoords;
-    }
-    return ""; // so the standard will be taken
-  }
-  
-  
-  public void loadWaypoint(String[] data){
-    String[] sp;
-    String variable, value;
-    for(int i = 0; i < data.length; i ++){
-      try{
-        sp = data[i].split("\": ");
-        variable = sp[0].split("\"")[1];
-        value = sp[1];
-        if(value.charAt(0) == '"'){
-          value = value.substring(1, value.length() - 2);
-        }
-        
-        if(variable.equals("dimensions")){
-          i ++;
-          this.setDimensions(data[i]);
-        } else{
-          this.set(variable, value);
-        }
-      } catch(Exception e){
-        
-      }
-      
-    }
-    
-  }
-  
-  
-  
-  public void setDimensions(String value){
-    dimN = false;
-    dimO = false;
-    dimE = false;
-    
-    String[] sp = value.split(" ");
-    for(String s : sp){
-      if(s.length() > 0){
-        if(s.equals("-1")){
-          dimN = true;
-        } else if(s.equals("0")){
-          dimO = true;
-        } else if(s.equals("1")){
-          dimE = true;
-        }
-        
-      }
-      
-      
-    }
-    
-    
-  }  
-  
-  
   
   boolean convertCoords;
   
@@ -193,25 +102,14 @@ public class Waypoint{
       }
       rV += "1";
     }
+    
     return rV;
   }
   
   
 }
 
-public String getLine(String[] dataFormat, Waypoint w){
-  String rV = "";
-  
-  for(int i = 0; i < dataFormat.length; i ++){
-    if(i % 2 == 0){
-      rV += w.get(dataFormat[i]);
-    } else {
-      rV += dataFormat[i];
-    }
-    
-  }
-  
-}
+
 
 public Waypoint initStandardWaypoint(){
   String[] info = loadStrings("standardWaypoint.txt");
