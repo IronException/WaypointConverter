@@ -37,21 +37,6 @@ public void setup(){
 int savedWps;
 
 
-
-/*
-  dataFormat:
-  0 "" // furst can be "" but rest cant
-  1 "n" // only vars if the standard shall be
-  2 ": "
-  3 "x"
-  ...
-  
-  -> odd r vars
-  
-  
-  
-*/
-
 public String[] initDataFormat(){
   String[] rV = new String[0];
   String data = loadStrings("dataFormat.txt")[0];
@@ -81,12 +66,6 @@ public Waypoint convertData(String[] dataFormat, String data){
   Waypoint rV = new Waypoint(); // the waypoint to be returned (rV = returnValue)
   int idF = 1; // index in dataFormat
   int lastIndex = 0;
-  
-  
-  if(dataFormat[0].length() < 1){
-    // start with the variable
-    // TODOD is that needed?
-  }
   
   
   for(int i = 0; i < data.length(); i ++){
